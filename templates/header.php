@@ -4,10 +4,10 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>Sports App</title>
+        <title>Hockey Stat Tracker</title>
 
         <link rel="stylesheet" href="css/style.css" />
     </head>
 
     <body>
-        <h1>Sports App</h1>
+        <h1>Hockey Stat Tracker</h1>

@@ -1,19 +1,39 @@
 <?php include "templates/header.php"; ?>
 
-    <h2>Add a player</h2>
+    <?php
+        if(isset($_POST['submit'])){
+
+            require "config.php";
+
+            $connection = new mysqli($host, $username, $password, $dbname);
+
+            if($connection->connect_error){
+                die("Connection failed: " . $connection->connect_error);
+            }
+
+            $statement = $connection->prepare("INSERT INTO teams (teamname) VALUES (?)");
+            $statement->bind_param("s", $teamname);
+
+            $teamname = $_POST['teamname'];
+            $statement->execute();
+
+            $statement->close();
+            $connection->close();
+        }
+    ?>
+
+    <h2>Add a team</h2>
+
+    <?php
+        if(isset($_POST['submit']) && isset($_POST['teamname'])){
+            echo "<p>" . $_POST['teamname'] . " was succesfully added.</p>";
+        }
+    ?>
 
     <form method="post">
-        <label for="team">Team</label>
-        <input type="text" id="team" name="team">
-    	<label for="firstname">First Name</label>
-    	<input type="text" name="firstname" id="firstname">
-    	<label for="lastname">Last Name</label>
-    	<input type="text" name="lastname" id="lastname">
-    	<label for="age">Age</label>
-    	<input type="text" name="age" id="age">
-        <label for="position">Position</label>
-        <input type="text" id="position" name="position">
-    	<input type="submit" name="submit" value="Submit">
+        <label for="teamname">Enter Team Name:</label>
+        <input type="text" id="teamname" name="teamname">
+        <input type="submit" name="submit" value="submit">
     </form>
 
     <a href="index.php">Back to home</a>
