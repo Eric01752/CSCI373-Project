@@ -12,7 +12,6 @@
     }
 
     $sql = file_get_contents("data/init.sql");
-    $connection->query($sql);
 
     if($connection->multi_query($sql) === TRUE){
         echo "Database and tables created";
