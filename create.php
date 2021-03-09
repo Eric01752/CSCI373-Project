@@ -1,30 +1,22 @@
 <?php include "templates/header.php"; ?>
 
     <?php
+        //Check if form was submitted
         if(isset($_POST['submit'])){
 
-            require "config.php";
+            require "db_functions.php";
 
-            $connection = new mysqli($host, $username, $password, $dbname);
-
-            if($connection->connect_error){
-                die("Connection failed: " . $connection->connect_error);
-            }
-
-            $statement = $connection->prepare("INSERT INTO teams (teamname) VALUES (?)");
-            $statement->bind_param("s", $teamname);
-
-            $teamname = $_POST['teamname'];
-            $statement->execute();
-
-            $statement->close();
-            $connection->close();
+            //Form data array
+            $data = array("teamname" => $_POST['teamname']);
+            //Custom database insert function
+            db_insert("teams", $data);
         }
     ?>
 
     <h2>Add a team</h2>
 
     <?php
+        //Check if form was submitted and data provided
         if(isset($_POST['submit']) && isset($_POST['teamname'])){
             echo "<p>" . $_POST['teamname'] . " was succesfully added.</p>";
         }
