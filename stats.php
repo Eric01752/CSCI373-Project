@@ -12,7 +12,7 @@
 
     <?php
 
-        require "config.php";
+        require "database/config.php";
 
         $connection = new mysqli($host, $username, $password, $dbname);
 

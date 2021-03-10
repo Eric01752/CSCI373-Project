@@ -4,7 +4,7 @@
         //Check if form was submitted
         if(isset($_POST['submit'])){
 
-            require "db_functions.php";
+            require "database/db_functions.php";
 
             //Form data array
             $data = array("teamname" => $_POST['teamname']);
