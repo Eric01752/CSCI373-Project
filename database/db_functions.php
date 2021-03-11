@@ -54,10 +54,15 @@
     }
     //End db_insert
 
-    function db_select(array $fields, array $tables, ){
+    function db_selectAll(string $table, $whereField="", $whereValue=""){
 
         $connection = get_connection();
 
+        $sql = "SELECT * FROM " . $table;
+        if($whereField != ""){
+            $sql .= "WHERE " . $whereField . "=?";
+        }
+        
         $statement = $connection->prepare($sql);
         $statement->bind_param("s", );
 
