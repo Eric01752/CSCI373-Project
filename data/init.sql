@@ -2,7 +2,7 @@ CREATE DATABASE IF NOT EXISTS hockeyapp;
     USE hockeyapp;
     CREATE TABLE Teams (
         teamID INT(11) UNSIGNED AUTO_INCREMENT UNIQUE NOT NULL,
-        teamname VARCHAR(40) NOT NULL,
+        teamname VARCHAR(40) UNIQUE NOT NULL,
         PRIMARY KEY (teamID)
     );
     CREATE TABLE Players (
@@ -10,8 +10,8 @@ CREATE DATABASE IF NOT EXISTS hockeyapp;
         fk_teamID INT(11) UNSIGNED NOT NULL,
         firstname VARCHAR(30) NOT NULL,
         lastname VARCHAR(30) NOT NULL,
-        age INT(3) NOT NULL,
-        position SET("Center","Left Wing","Right Wing","Defense","Goalie") NOT NULL,
+        birthyear INT(3) NOT NULL,
+        position VARCHAR(10) NOT NULL,
         PRIMARY KEY (playerID),
         FOREIGN KEY (fk_teamID) REFERENCES Teams(teamID)
     );
@@ -29,36 +29,3 @@ CREATE DATABASE IF NOT EXISTS hockeyapp;
     ALTER TABLE Stats
     ADD CONSTRAINT FK_player_stats FOREIGN KEY (fk_playerID)
         REFERENCES Players(playerID);
-    /*Test Data*/
-    INSERT INTO teams(teamname)
-    VALUES("Boston Bruins");
-    INSERT INTO players(fk_teamID,firstname,lastname,age,position)
-    VALUES(1,"Bob","Smith",30,"Center");
-    INSERT INTO stats(fk_playerID)
-    VALUES(1);
-    INSERT INTO players(fk_teamID,firstname,lastname,age,position)
-    VALUES(1,"Phil","Duke",25,"Left Wing");
-    INSERT INTO stats(fk_playerID)
-    VALUES(2);
-    INSERT INTO players(fk_teamID,firstname,lastname,age,position)
-    VALUES(1,"Steve","Dome",28,"Goalie");
-    INSERT INTO stats(fk_playerID)
-    VALUES(3);
-    INSERT INTO players(fk_teamID,firstname,lastname,age,position)
-    VALUES(1,"Jake","Tucker",19,"Right Wing");
-    INSERT INTO stats(fk_playerID)
-    VALUES(4);
-    INSERT INTO players(fk_teamID,firstname,lastname,age,position)
-    VALUES(1,"Mark","White",31,"Defense");
-    INSERT INTO stats(fk_playerID)
-    VALUES(5);
-
-    /*Test Queries*/
-    /*SELECT * FROM teams;
-    SELECT * FROM players;
-    SELECT * FROM stats;
-
-    SELECT lastname,firstname
-    FROM players
-    WHERE lastname="Smith";*/
-    

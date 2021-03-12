@@ -5,7 +5,7 @@
 
     <ul>
         <li>
-            <a href=""><strong>Import</strong></a>
+            <a href="load.php"><strong>Load</strong></a>
         </li>
         <li>
             <a href="read.php"><strong>Stats</strong></a>

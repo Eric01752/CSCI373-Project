@@ -11,7 +11,7 @@
         echo "Connection Success<br />";
     }
 
-    $sql = file_get_contents("data/init.sql");
+    $sql = file_get_contents("../data/init.sql");
 
     if($connection->multi_query($sql) === TRUE){
         echo "Database and tables created";
