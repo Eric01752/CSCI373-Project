@@ -8,7 +8,7 @@
             <a href="load.php"><strong>Load</strong></a>
         </li>
         <li>
-            <a href="read.php"><strong>Stats</strong></a>
+            <a href="team_stats.php"><strong>Team Stats</strong></a>
         </li>
         <li>
             <a href="create.php"><strong>Create</strong></a>

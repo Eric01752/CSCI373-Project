@@ -3,6 +3,10 @@ CREATE DATABASE IF NOT EXISTS hockeyapp;
     CREATE TABLE Teams (
         teamID INT(11) UNSIGNED AUTO_INCREMENT UNIQUE NOT NULL,
         teamname VARCHAR(40) UNIQUE NOT NULL,
+        wins INT(3) DEFAULT 0,
+        losses INT(3) DEFAULT 0,
+        overtimelosses INT(3) DEFAULT 0,
+        winningpercentage DECIMAL(2,1) DEFAULT 0.0,
         PRIMARY KEY (teamID)
     );
     CREATE TABLE Players (
@@ -10,7 +14,7 @@ CREATE DATABASE IF NOT EXISTS hockeyapp;
         fk_teamID INT(11) UNSIGNED NOT NULL,
         firstname VARCHAR(30) NOT NULL,
         lastname VARCHAR(30) NOT NULL,
-        birthyear INT(3) NOT NULL,
+        birthyear INT(4) NOT NULL,
         position VARCHAR(10) NOT NULL,
         PRIMARY KEY (playerID),
         FOREIGN KEY (fk_teamID) REFERENCES Teams(teamID)

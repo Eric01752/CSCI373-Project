@@ -2,6 +2,7 @@
 
     require "config.php";
 
+    //Install Database with tables
     $connection = new mysqli($host, $username, $password);
 
     if($connection->connect_error){
@@ -11,7 +12,7 @@
         echo "Connection Success<br />";
     }
 
-    $sql = file_get_contents("../data/init.sql");
+    $sql = file_get_contents("init.sql");
 
     if($connection->multi_query($sql) === TRUE){
         echo "Database and tables created";
@@ -21,4 +22,5 @@
     }
     
     $connection->close();
+    //End
 ?>

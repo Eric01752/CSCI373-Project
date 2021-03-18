@@ -3,12 +3,6 @@ label {
     margin: 5px 0;
 }
 
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-  
-td, th {
-    padding: 5px;
-    border-bottom: 1px solid #aaa;
+table, th, td {
+    border: 1px solid black;
 }
