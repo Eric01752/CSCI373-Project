@@ -37,9 +37,9 @@
             if($result->num_rows == 0){
                 //Insert team into database
                 $connection2 = get_connection();
-                $sql_insert_team = "INSERT INTO teams(teamname) VALUES(?)";
+                $sql_insert_team = "INSERT INTO teams(teamcode, teamname) VALUES(?, ?)";
                 $statement = $connection2->prepare($sql_insert_team);
-                $statement->bind_param("s", $team);
+                $statement->bind_param("ss", $_POST['teams'], $team);
                 $statement->execute();
 
                 $statement->close();
@@ -61,7 +61,7 @@
 
                 while(!feof($team_file)){
                     $line = fgets($team_file);
-                    $player_info = explode(" ", $line);
+                    $player_info = explode(" ", trim($line));
 
                     $player_firstname = (string)$player_info[0];
                     $player_lastname = (string)$player_info[1];
@@ -117,7 +117,7 @@
     ?>
 
     <form method="post">
-    	<label for="teams">Select a team to import:</label>
+    	<label for="teams">Select a team to load:</label>
     	<select name="teams" size="1" onChange="changeImg('teamImg', 'img', this.value)">
             <option value="ANA">Anaheim Ducks</option>
             <option value="ARI">Arizona Coyotes</option>

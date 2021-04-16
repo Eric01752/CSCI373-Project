@@ -2,6 +2,7 @@ CREATE DATABASE IF NOT EXISTS hockeyapp;
     USE hockeyapp;
     CREATE TABLE Teams (
         teamID INT(11) UNSIGNED AUTO_INCREMENT UNIQUE NOT NULL,
+        teamcode VARCHAR(3) UNIQUE NOT NULL,
         teamname VARCHAR(40) UNIQUE NOT NULL,
         wins INT(3) DEFAULT 0,
         losses INT(3) DEFAULT 0,
@@ -28,7 +29,15 @@ CREATE DATABASE IF NOT EXISTS hockeyapp;
         plusminus INT(3) DEFAULT 0,
         faceoffswon INT(4) DEFAULT 0,
         faceoffslost INT(4) DEFAULT 0,
-        faceoffpercentage DECIMAL(2,1) DEFAULT 0.0
+        faceoffpercentage DECIMAL(2,1) DEFAULT 0.0,
+        wins INT(3) DEFAULT 0,
+        losses INT(3) DEFAULT 0,
+        overtimelosses INT(3) DEFAULT 0,
+        shotsagainst INT(4) DEFAULT 0,
+        goalsagainst INT(4) DEFAULT 0,
+        goalsagainstaverage DECIMAL(3,2) DEFAULT 0.0,
+        savepercentage DECIMAL(4,3) DEFAULT 0.0,
+        shutouts INT(3) DEFAULT 0
     );
     ALTER TABLE Stats
     ADD CONSTRAINT FK_player_stats FOREIGN KEY (fk_playerID)

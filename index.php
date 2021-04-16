@@ -11,6 +11,9 @@
             <a href="team_stats.php"><strong>Team Stats</strong></a>
         </li>
         <li>
+            <a href="player_stats.php"><strong>Player Stats</strong></a>
+        </li>
+        <li>
             <a href="create.php"><strong>Create</strong></a>
         </li>
         <li>
