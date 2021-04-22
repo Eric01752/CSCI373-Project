@@ -17,10 +17,10 @@
             <a href="create.php"><strong>Create</strong></a>
         </li>
         <li>
-            <a href=""><strong>Update</strong></a>
+            <a href="update.php"><strong>Update</strong></a>
         </li>
         <li>
-            <a href=""><strong>Delete</strong></a>
+            <a href="delete.php"><strong>Delete</strong></a>
         </li>
     </ul>
 

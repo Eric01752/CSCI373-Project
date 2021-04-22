@@ -1,10 +1,10 @@
 <?php include "templates/header.php"; ?>
 
+    <?php require_once "database/db_functions.php";?>
+
     <h2>Player Stats</h2>
 
     <?php
-
-        require "database/db_functions.php";
         
         //Get the teamcodes and teamnames
         $connection = get_connection();

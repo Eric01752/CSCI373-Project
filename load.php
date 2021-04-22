@@ -1,11 +1,11 @@
 <?php include "templates/header.php"; ?>
 
+    <?php require_once "database/db_functions.php";?>
+
     <h2>Load NHL Teams</h2>
 
     <?php
         if(isset($_POST['submit'])){
-
-            require "database/db_functions.php";
 
             //Team code comparison array
             $team_array = array(
@@ -97,6 +97,7 @@
                 for($x = 0;$x < sizeof($playerID);$x++){
                     $sql_insert_stats_ref = "INSERT INTO stats (fk_playerID) VALUES ($playerID[$x])";
                     if($connection6->query($sql_insert_stats_ref) === TRUE){
+                        echo "<script>alert('$team has been loaded into database')</script></p>";
                     }
                     else{
                         echo "Error: " . $connection6->error;
@@ -104,8 +105,6 @@
                 }
                 $connection6->close();
                 //End
-
-                echo "<p>$team has been loaded into database</p>";
             }
             else{
                 echo "<p>$team is already loaded into database</p>";

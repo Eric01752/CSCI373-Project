@@ -42,3 +42,5 @@ CREATE DATABASE IF NOT EXISTS hockeyapp;
     ALTER TABLE Stats
     ADD CONSTRAINT FK_player_stats FOREIGN KEY (fk_playerID)
         REFERENCES Players(playerID);
+
+    INSERT INTO teams (teamcode, teamname) VALUES ("FA", "Free Agents");
