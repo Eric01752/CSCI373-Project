@@ -95,7 +95,7 @@
                 $connection->close();
 
                 $connection = get_connection();
-                $sql_insert_player_stat_ref = "INSERT INTO stats(fk_playerID) VALUES($playerID)";
+                $sql_insert_player_stat_ref = "INSERT INTO stats(fk_playerID, fk_stats_teamID) VALUES($playerID, $fk_teamID)";
                 if($connection->query($sql_insert_player_stat_ref) === TRUE){
                     echo "<script>alert('$firstname $lastname has been created.')</script></p>";
                 }

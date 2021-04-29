@@ -6,3 +6,10 @@ label {
 table, th, td {
     border: 1px solid black;
 }
+
+.players {
+    display: inline-block;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid black;
+}

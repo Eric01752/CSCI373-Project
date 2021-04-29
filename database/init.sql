@@ -7,7 +7,7 @@ CREATE DATABASE IF NOT EXISTS hockeyapp;
         wins INT(3) DEFAULT 0,
         losses INT(3) DEFAULT 0,
         overtimelosses INT(3) DEFAULT 0,
-        winningpercentage DECIMAL(2,1) DEFAULT 0.0,
+        winningpercentage DECIMAL(4,3) DEFAULT 0.0,
         PRIMARY KEY (teamID)
     );
     CREATE TABLE Players (
@@ -22,6 +22,7 @@ CREATE DATABASE IF NOT EXISTS hockeyapp;
     );
     CREATE TABLE Stats (
         fk_playerID INT(11) UNSIGNED UNIQUE NOT NULL,
+        fk_stats_teamID INT(11) UNSIGNED NOT NULL,
         gamesplayed INT(3) DEFAULT 0,
         goals INT(3) DEFAULT 0,
         assists INT(3) DEFAULT 0,
@@ -29,7 +30,7 @@ CREATE DATABASE IF NOT EXISTS hockeyapp;
         plusminus INT(3) DEFAULT 0,
         faceoffswon INT(4) DEFAULT 0,
         faceoffslost INT(4) DEFAULT 0,
-        faceoffpercentage DECIMAL(2,1) DEFAULT 0.0,
+        faceoffpercentage DECIMAL(4,2) DEFAULT 0.0,
         wins INT(3) DEFAULT 0,
         losses INT(3) DEFAULT 0,
         overtimelosses INT(3) DEFAULT 0,

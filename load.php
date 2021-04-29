@@ -95,14 +95,15 @@
                 //Insert player stats reference into database
                 $connection6 = get_connection();
                 for($x = 0;$x < sizeof($playerID);$x++){
-                    $sql_insert_stats_ref = "INSERT INTO stats (fk_playerID) VALUES ($playerID[$x])";
+                    $sql_insert_stats_ref = "INSERT INTO stats (fk_playerID, fk_stats_teamID) VALUES ($playerID[$x], $player_teamID)";
                     if($connection6->query($sql_insert_stats_ref) === TRUE){
-                        echo "<script>alert('$team has been loaded into database')</script></p>";
                     }
                     else{
-                        echo "Error: " . $connection6->error;
+                        echo "Error";
+                        break;
                     }
                 }
+                echo "<script>alert('$team has been loaded into database')</script></p>";
                 $connection6->close();
                 //End
             }
