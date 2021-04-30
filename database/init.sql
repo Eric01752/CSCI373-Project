@@ -18,7 +18,7 @@ CREATE DATABASE IF NOT EXISTS hockeyapp;
         birthyear INT(4) NOT NULL,
         position VARCHAR(10) NOT NULL,
         PRIMARY KEY (playerID),
-        FOREIGN KEY (fk_teamID) REFERENCES Teams(teamID)
+        FOREIGN KEY (fk_teamID) REFERENCES Teams(teamID) ON DELETE CASCADE
     );
     CREATE TABLE Stats (
         fk_playerID INT(11) UNSIGNED UNIQUE NOT NULL,
@@ -42,6 +42,7 @@ CREATE DATABASE IF NOT EXISTS hockeyapp;
     );
     ALTER TABLE Stats
     ADD CONSTRAINT FK_player_stats FOREIGN KEY (fk_playerID)
-        REFERENCES Players(playerID);
+        REFERENCES Players(playerID)
+        ON DELETE CASCADE;
 
     INSERT INTO teams (teamcode, teamname) VALUES ("FA", "Free Agents");

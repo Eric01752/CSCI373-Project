@@ -6,7 +6,7 @@
 
     <?php
 
-        //Get the teamcodes and teamnames
+        //Get the teamID and teamnames
         $connection = get_connection();
         $sql_teams = "SELECT teamID, teamname FROM teams ORDER BY teamname";
         $result = $connection->query($sql_teams);

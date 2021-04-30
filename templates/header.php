@@ -10,4 +10,6 @@
     </head>
 
     <body>
-        <h1>Hockey Stat Tracker</h1>
+        <header>
+            <h1>Hockey Stat Tracker</h1>
+        </header>
