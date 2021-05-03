@@ -19,7 +19,8 @@
                 array_push($teams, $row);
             }
 
-            echo "<h3>Delete Team</h3>";
+            echo "<div class='center'>";
+            echo "<h3 class='h3_left'>Delete Team</h3>";
             echo "<h4>***CAUTION: Deleting a team will also delete its players.***</h4>";
             
             echo "<form method='post'>";
@@ -40,7 +41,7 @@
                 <p>create your own using the create link on the homepage.</p>";
         }
 
-        echo "<h3>Delete Player</h3>";
+        echo "<h3 class='h3_left'>Delete Player</h3>";
 
         if(isset($_POST['submit_player'])){
 
@@ -59,15 +60,19 @@
             $connection->close();
         }
 
+        echo "<div class='center'>";
         echo "<form method='post'>";
+        echo "<div class='row'>";
         echo "<label for='firstname'>Firstname:</label>";
         echo "<input type='text' name='firstname'>";
         echo "<label for='lastname'>Lastname:</label>";
         echo "<input type='text' name='lastname'>";
         echo "<label for='birthyear'>Birth Year:</label>";
         echo "<input type='text' name='birthyear'>";
+        echo "</div>";
         echo "<input type='submit' name='submit_player' value='Delete Player'>";
         echo "</form>";
+        echo "</div>";
 
         if(isset($_POST['submit_team'])){
 

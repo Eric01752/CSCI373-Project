@@ -2,6 +2,7 @@
 
     <?php require_once "database/db_functions.php";?>
 
+    <div class="center">
     <h2>Update Information/Stats</h2>
 
     <?php
@@ -68,6 +69,8 @@
                 
                 echo "<h4>Team</h4>";
                 
+                echo "<div class='center'>";
+                echo "<div class='row'>";
                 echo "<form method='post'>";
                 echo "<label for='teamID'>Team ID:</label>";
                 echo "<input type='number' name='teamID' min=1 value='$teamID' readonly>";
@@ -75,19 +78,23 @@
                 echo "<input type='text' name='teamcode' value='$teamcode'>";
                 echo "<label for='teamname'>Team Name:</label>";
                 echo "<input type='text' name='teamname' value='$teamname'>";
+                echo "</div>";
 
+                echo "<div class='row'>";
                 echo "<label for='wins'>Wins:</label>";
                 echo "<input type='number' id='wins' name='wins' min='0' max='100' value='$wins' onchange='changeWinningPercentage()'>";
                 echo "<label for='losses'>Losses:</label>";
                 echo "<input type='number' id='losses' name='losses' min='0' max='100' value='$losses' onchange='changeWinningPercentage()'>";
-                echo "<label for='overtimelosses'>Overtime Losses:</label>";
+                echo "<label for='overtimelosses'>OTL:</label>";
                 echo "<input type='number' id='overtimelosses' name='overtimelosses' min='0' max='100' value='$overtimelosses' onchange='changeWinningPercentage()'>";
                 echo "<label for='winningpercentage'>Winning %:</label>";
                 echo "<input type='text' id='winningpercentage' name='winningpercentage' value='$winningpercentage' readonly>";
-                
+                echo "</div>";
+
                 echo "<input type='submit' name='submit_team' value='Update Team'>";
                 echo "<input type='reset'>";
                 echo "</form>";
+                echo "</div>";
 
                 echo "<h4>Players</h4>";
 
@@ -115,14 +122,16 @@
 
                     $playercount = sizeof($players);
                     $count = 0;
+                    $column = 1;
                     
                     echo "<form method='post'>";
                     echo "<input type='hidden' name='playercount' value=$playercount>";
+                    echo "<div id='update_players'>";
                     foreach($players as $player){
 
                         $playerstat = $playerstats[$count];
 
-                        echo "<div class='players'>";
+                        echo "<div class='players_$column'>";
                         echo "<label for='team_$count'>Team:</label>";
                         echo "<select name='team_$count' size=1>";
                 
@@ -218,7 +227,17 @@
                         }
                         echo "</div>";
                         $count++;
+                        if($column == 1){
+                            $column = 2;
+                        }
+                        elseif($column == 2){
+                            $column = 3;
+                        }
+                        else{
+                            $column = 1;
+                        }
                     }
+                    echo "</div>";
 
                     echo "<input type='submit' name='submit_players' value='Update Players'>";
                     echo "<input type='reset'>";

@@ -10,6 +10,7 @@
     </head>
 
     <body>
-        <header>
-            <h1>Hockey Stat Tracker</h1>
-        </header>
+        <div id="container">
+            <header>
+                <h1><span>Hockey Stat Tracker</span></h1>
+            </header>

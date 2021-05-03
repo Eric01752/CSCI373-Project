@@ -18,6 +18,7 @@
                 array_push($teams, $row);
             }
             
+            echo "<div class='center'>";
             echo "<form method='post'>";
             echo "<label for='teams'>Select a team to view roster:</label>";
             echo "<select name='teams' size=1>";
@@ -69,7 +70,7 @@
                     array_push($forwards, $row);
                 }
 
-                echo "<h3>$teamname</h3>";
+                echo "<h3>Current Team: $teamname</h3>";
 
                 echo "<h5>Forwards</h5>";
 

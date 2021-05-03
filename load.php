@@ -16,14 +16,18 @@
                 "CAR" => "Carolina Hurricanes",
                 "CBJ" => "Columbus Blue Jackets",
                 "CHI" => "Chicago Blackhawks",
+                "COL" => "Colorado Avalanche",
                 "DAL" => "Dallas Stars",
                 "DET" => "Detroit Red Wings",
                 "FLA" => "Florida Panthers",
+                "LAK" => "Los Angeles Kings",
+                "NSN" => "Nashville Predators",
                 "NJD" => "New Jersey Devils",
                 "NYI" => "New York Islanders",
                 "NYR" => "New York Rangers",
                 "PHI" => "Philadelphia Flyers",
                 "PIT" => "Pittsburgh Penguins",
+                "TBL" => "Tampa Bay Lightning",
                 "WSH" => "Washington Capitals"
             );
 
@@ -108,7 +112,7 @@
                 //End
             }
             else{
-                echo "<p>$team is already loaded into database</p>";
+                echo "<p class='load_container'>$team is already loaded into database</p>";
             }
 
             $connection->close();
@@ -116,6 +120,8 @@
         }
     ?>
 
+    <div class="center">
+    <div id="load_form">
     <form method="post">
     	<label for="teams">Select a team to load:</label>
     	<select name="teams" size="1" onChange="changeImg('teamImg', 'img', this.value)">
@@ -153,6 +159,7 @@
         </select>
         <input type="submit" name="submit" value="Load Team">
     </form>
+    </div>
 
     <img id="teamImg" src="img/ANA.png">
 

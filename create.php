@@ -4,7 +4,8 @@
 
     <h2>Create Teams And Players</h2>
 
-    <h3>Team</h3>
+    <div class='center'>
+    <h3 class="h3_left">Team</h3>
 
     <?php
 
@@ -52,16 +53,19 @@
 
     ?>
 
+    <div class='center'>
     <form method="post">
+        <div class="row">
         <label for="team">Name:</label>
         <input type="text" name="team">
-        <label for="teamcode">Abbreviation: (Ex. ABC)</label>
+        <label for="teamcode">Abbreviation:</label>
         <input type="text" name="teamcode">
-        <br />
+        </div>
         <input type="submit" name="submit_team" value="Create Team">
     </form>
+    </div>
 
-    <h3>Player</h3>
+    <h3 class="h3_left">Player</h3>
 
     <?php
 
@@ -111,13 +115,17 @@
 
     ?>
 
+    <div class='center'>
     <form method="post">
+        <div class="row">
         <label for="firstname">First name:</label>
         <input type="text" name="firstname">
         <label for="lastname">Last name:</label>
         <input type="text" name="lastname">
         <label for="birthyear">Birth Year:</label>
         <input type="text" name="birthyear">
+        </div>
+        <div class="row">
         <label for="position">Position:</label>
         <select name="position" size="1">
             <option value="Center">Center</option>
@@ -150,9 +158,9 @@
                 echo "</select>";
             }
         ?>
-
-        <br />
+        </div>
         <input type="submit" name="submit_player" value="Create Player">
     </form>
+    </div>
 
 <?php include "templates/footer.php"; ?>

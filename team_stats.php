@@ -19,6 +19,7 @@
             }
 
             //Create html table using database data
+            echo "<div class='center'>";
             echo "<table>";
             echo "<tr>";
             echo "<th>Team Name</th>";
