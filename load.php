@@ -4,24 +4,21 @@
 
     <h2>Load NHL Teams</h2>
 
+    <div class="center">
     <?php
         if(isset($_POST['submit'])){
 
             //Team code comparison array
             $team_array = array(
-                "ANA" => "Anaheim Ducks",
-                "ARI" => "Arizona Coyotes",
                 "BOS" => "Boston Bruins",
                 "BUF" => "Buffalo Sabres",
                 "CAR" => "Carolina Hurricanes",
                 "CBJ" => "Columbus Blue Jackets",
                 "CHI" => "Chicago Blackhawks",
-                "COL" => "Colorado Avalanche",
                 "DAL" => "Dallas Stars",
                 "DET" => "Detroit Red Wings",
                 "FLA" => "Florida Panthers",
-                "LAK" => "Los Angeles Kings",
-                "NSN" => "Nashville Predators",
+                "NSH" => "Nashville Predators",
                 "NJD" => "New Jersey Devils",
                 "NYI" => "New York Islanders",
                 "NYR" => "New York Rangers",
@@ -120,48 +117,32 @@
         }
     ?>
 
-    <div class="center">
     <div id="load_form">
     <form method="post">
     	<label for="teams">Select a team to load:</label>
     	<select name="teams" size="1" onChange="changeImg('teamImg', 'img', this.value)">
-            <option value="ANA">Anaheim Ducks</option>
-            <option value="ARI">Arizona Coyotes</option>
             <option value="BOS">Boston Bruins</option>
             <option value="BUF">Buffalo Sabres</option>
-            <option value="CGY">Calgary Flames</option>
             <option value="CAR">Carolina Hurricanes</option>
             <option value="CHI">Chicago Blackhawks</option>
-            <option value="COL">Colorado Avalanche</option>
             <option value="CBJ">Columbus Blue Jackets</option>
             <option value="DAL">Dallas Stars</option>
             <option value="DET">Detroit Red Wings</option>
-            <option value="EDM">Edmonton Oilers</option>
             <option value="FLA">Florida Panthers</option>
-            <option value="LAK">Los Angeles Kings</option>
-            <option value="MIN">Minnesota Wild</option>
-            <option value="MTL">Montreal Canadiens</option>
             <option value="NSH">Nashville Predators</option>
             <option value="NJD">New Jersey Devils</option>
             <option value="NYI">New York Islanders</option>
             <option value="NYR">New York Rangers</option>
-            <option value="OTT">Ottawa Senators</option>
             <option value="PHI">Philadelphia Flyers</option>
             <option value="PIT">Pittsburgh Penguins</option>
-            <option value="SJS">San Jose Sharks</option>
-            <option value="STL">St. Louis Blues</option>
             <option value="TBL">Tampa Bay Lightning</option>
-            <option value="TOR">Toronto Maple Leafs</option>
-            <option value="VAN">Vancouver Canucks</option>
-            <option value="VGK">Vegas Golden Knights</option>
             <option value="WSH">Washington Capitals</option>
-            <option value="WPG">Winnipeg Jets</option>
         </select>
         <input type="submit" name="submit" value="Load Team">
     </form>
     </div>
 
-    <img id="teamImg" src="img/ANA.png">
+    <img id="teamImg" src="img/BOS.png">
 
     <script language="Javascript">
         function changeImg(imageID, folder, newImg){
